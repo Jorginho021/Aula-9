@@ -1,0 +1,50 @@
+package br.ulbra.aulatext;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Mapeamento dos componentes da interface
+        EditText etxtEmail = findViewById(R.id.etxtEmail);
+        EditText etxtSenha = findViewById(R.id.etxtSenha);
+        Button btnEntrar = findViewById(R.id.btnEntrar);
+        TextView txtResultado = findViewById(R.id.txtResultado);
+
+        // Ação do botão
+        btnEntrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Obtendo os textos informados
+                String email = etxtEmail.getText().toString();
+                String senha = etxtSenha.getText().toString();
+
+                // Regra Extra (Exercícios 4 a 7): Conferir dados com 'if'
+                if (senha.length() >= 6) {
+                    // Senha válida
+                    System.out.println("E-mail: " + email);
+                    System.out.println("Senha: " + senha);
+                    System.out.println("Status: Login realizado com sucesso!");
+
+                    // Desafio: Exibir resultado na tela
+                    txtResultado.setText("Login efetuado com sucesso para: " + email);
+                } else {
+                    // Senha inválida (menos de 6 caracteres)
+                    System.out.println("Erro: A senha deve ter no mínimo 6 caracteres.");
+
+                    // Desafio: Exibir erro na tela
+                    txtResultado.setText("Erro: A senha deve ter no mínimo 6 caracteres.");
+                }
+            }
+        });
+    }
+}
