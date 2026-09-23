@@ -1,0 +1,46 @@
+package br.ulbra.aulatext;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Mapeando os componentes do layout pelos IDs definidos no XML
+        EditText etxtNomePet = findViewById(R.id.etxtNomePet);
+        EditText etxtEspecie = findViewById(R.id.etxtEspecie);
+        EditText etxtIdadePet = findViewById(R.id.etxtIdadePet);
+        Button btnCadastrarPet = findViewById(R.id.btn_CadastrarPet);
+        TextView txtResultado = findViewById(R.id.txtResultado);
+
+        // Ação de clique do botão
+        btnCadastrarPet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Obtendo os valores digitados pelo usuário
+                String nome = etxtNomePet.getText().toString();
+                String especie = etxtEspecie.getText().toString();
+                String idade = etxtIdadePet.getText().toString();
+
+                // Etapa 1: Imprimindo os dados no terminal (Logcat)
+                System.out.println("Nome: " + nome);
+                System.out.println("Espécie: " + especie);
+                System.out.println("Idade: " + idade + " anos");
+
+                // Desafio: Exibindo a mensagem formatada na tela (TextView)
+                txtResultado.setText(nome + " (" + especie + "), " + idade + " anos, cadastrado com sucesso!");
+            }
+        });
+    }
+}
+
+
+
