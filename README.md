@@ -2,7 +2,8 @@
 
 
 # Exercicio 1
-<img width="1863" height="973" alt="Captura de tela 2026-09-23 165136" src="https://github.com/user-attachments/assets/12c278cc-3fc1-4f02-bf22-77b1a97ad64e" />
+<img width="1812" height="940" alt="image" src="https://github.com/user-attachments/assets/6ef44f20-f478-403a-b9cd-d6cac404fb0d" />
+
 
 # Exercicio 2
 
@@ -10,3 +11,4 @@
 
 
 # Exercicio 3 
+<img width="1863" height="973" alt="Captura de tela 2026-09-23 165136" src="https://github.com/user-attachments/assets/12c278cc-3fc1-4f02-bf22-77b1a97ad64e" />
