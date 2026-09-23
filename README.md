@@ -21,3 +21,6 @@
 
 # Exercicio 6
 <img width="1750" height="904" alt="image" src="https://github.com/user-attachments/assets/f5364bc4-a0ef-4091-a398-817a81ce2e1b" />
+
+# Exercicio 7
+<img width="1853" height="975" alt="image" src="https://github.com/user-attachments/assets/90f25267-5bd1-42d6-98ab-8d9a9bd4ee11" />
