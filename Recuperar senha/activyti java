@@ -1,0 +1,47 @@
+package br.ulbra.aulatext;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Mapeando os componentes da interface
+        EditText etxtEmail = findViewById(R.id.etxtEmail);
+        EditText etxtConfirmarEmail = findViewById(R.id.etxtConfirmarEmail);
+        Button btnRecuperarSenha = findViewById(R.id.btnRecuperarSenha);
+        TextView txtResultado = findViewById(R.id.txtResultado);
+
+        // Ação ao clicar no botão "Recuperar Senha"
+        btnRecuperarSenha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = etxtEmail.getText().toString();
+                String confirmarEmail = etxtConfirmarEmail.getText().toString();
+
+                // Regra Extra: Verificar se os dois e-mails são iguais
+                if (!email.isEmpty() && email.equals(confirmarEmail)) {
+                    // E-mails conferem
+                    System.out.println("E-mail: " + email);
+                    System.out.println("Confirmar E-mail: " + confirmarEmail);
+                    System.out.println("Status: Link de recuperação enviado!");
+
+                    // Desafio: Exibir mensagem na tela
+                    txtResultado.setText("E-mail de recuperação enviado para: " + email);
+                } else {
+                    // E-mails diferentes ou em branco
+                    System.out.println("Erro: Os e-mails informados não são iguais.");
+                    txtResultado.setText("Erro: Os e-mails não coincidem!");
+                }
+            }
+        });
+    }
+}
