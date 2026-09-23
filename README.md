@@ -18,3 +18,6 @@
 
 # Exercicio 5
 <img width="1860" height="904" alt="image" src="https://github.com/user-attachments/assets/f351592c-9a59-4837-80ed-2ed09e20c14f" />
+
+# Exercicio 6
+<img width="1750" height="904" alt="image" src="https://github.com/user-attachments/assets/f5364bc4-a0ef-4091-a398-817a81ce2e1b" />
