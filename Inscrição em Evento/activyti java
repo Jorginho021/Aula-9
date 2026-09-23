@@ -1,0 +1,59 @@
+package br.ulbra.aulatext;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Mapeando os componentes da interface
+        EditText etxtNome = findViewById(R.id.etxtNome);
+        EditText etxtEmail = findViewById(R.id.etxtEmail);
+        EditText etxtIdade = findViewById(R.id.etxtIdade);
+        Button btnInscrever = findViewById(R.id.btnInscrever);
+        TextView txtResultado = findViewById(R.id.txtResultado);
+
+        // Ação ao clicar no botão "Inscrever"
+        btnInscrever.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nome = etxtNome.getText().toString();
+                String email = etxtEmail.getText().toString();
+                String idadeStr = etxtIdade.getText().toString();
+
+                // Verifica se o campo de idade não está vazio antes de converter
+                if (!idadeStr.isEmpty()) {
+                    int idade = Integer.parseInt(idadeStr);
+
+                    // Regra Extra: Validar se a idade está entre 14 e 99 anos
+                    if (idade >= 14 && idade <= 99) {
+                        // Etapa 1: Imprimir no Logcat / Terminal
+                        System.out.println("Nome: " + nome);
+                        System.out.println("E-mail: " + email);
+                        System.out.println("Idade: " + idade);
+                        System.out.println("Status: Inscrição confirmada!");
+
+                        // Desafio: Mostrar no TextView
+                        txtResultado.setText("Inscrição realizada com sucesso para " + nome + "!");
+                    } else {
+                        // Idade fora do intervalo permitido
+                        System.out.println("Erro: A idade deve estar entre 14 e 99 anos.");
+                        txtResultado.setText("Erro: Inscrição permitida apenas para idades entre 14 e 99 anos.");
+                    }
+                } else {
+                    // Campo de idade em branco
+                    System.out.println("Erro: Por favor, informe a idade.");
+                    txtResultado.setText("Erro: Informe a idade.");
+                }
+            }
+        });
+    }
+}
