@@ -1,0 +1,59 @@
+package br.ulbra.aulatext;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Mapeando os componentes da interface
+        EditText etxtNomeProduto = findViewById(R.id.etxtNomeProduto);
+        EditText etxtPreco = findViewById(R.id.etxtPreco);
+        EditText etxtQuantidade = findViewById(R.id.etxtQuantidade);
+        Button btnCadastrarProduto = findViewById(R.id.btnCadastrarProduto);
+        TextView txtResultado = findViewById(R.id.txtResultado);
+
+        // Ação ao clicar no botão "Cadastrar Produto"
+        btnCadastrarProduto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nome = etxtNomeProduto.getText().toString();
+                String precoStr = etxtPreco.getText().toString();
+                String quantidadeStr = etxtQuantidade.getText().toString();
+
+                // Verifica se o campo de preço não está vazio
+                if (!precoStr.isEmpty()) {
+                    double preco = Double.parseDouble(precoStr);
+
+                    // Regra Extra: Preço deve ser maior que 0
+                    if (preco > 0) {
+                        // Etapa 1: Imprimir no Logcat / Terminal
+                        System.out.println("Produto: " + nome);
+                        System.out.println("Preço: R$ " + preco);
+                        System.out.println("Quantidade: " + quantidadeStr);
+                        System.out.println("Status: Produto cadastrado com sucesso!");
+
+                        // Desafio: Exibir mensagem na tela
+                        txtResultado.setText("Produto '" + nome + "' cadastrado com sucesso!");
+                    } else {
+                        // Preço igual ou menor que zero
+                        System.out.println("Erro: O preço deve ser maior que 0.");
+                        txtResultado.setText("Erro: O preço deve ser maior que 0.");
+                    }
+                } else {
+                    // Campo de preço não informado
+                    System.out.println("Erro: Por favor, informe o preço do produto.");
+                    txtResultado.setText("Erro: Informe o preço.");
+                }
+            }
+        });
+    }
+}
