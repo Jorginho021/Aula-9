@@ -1,0 +1,43 @@
+package br.ulbra.aulatext;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Mapeando os componentes do layout pelos IDs indicados no exercício
+        EditText etxtNome = findViewById(R.id.etxtNome);
+        EditText etxtSala = findViewById(R.id.etxtSala);
+        EditText etxtHorario = findViewById(R.id.etxtHorario);
+        Button btnReservar = findViewById(R.id.btn_Reservar);
+        TextView txtResultado = findViewById(R.id.txtResultado);
+
+        // Configurando o clique do botão
+        btnReservar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Obter os valores digitados
+                String nome = etxtNome.getText().toString();
+                String sala = etxtSala.getText().toString();
+                String horario = etxtHorario.getText().toString();
+
+                // Etapa 1: Mostrar no Logcat / Terminal com System.out.println
+                System.out.println("Responsável: " + nome);
+                System.out.println("Sala: " + sala);
+                System.out.println("Horário: " + horario);
+
+                // Desafio: Exibir o resultado na tela no TextView txtResultado
+                txtResultado.setText("Reserva confirmada: " + sala + " para " + nome + " às " + horario);
+            }
+        });
+    }
+}
