@@ -1,36 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout 
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
     <EditText
-        android:id="@+id/etxtNome"
+        android:id="@+id/etxtLanche"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome do Professor" />
+        android:hint="Lanche" />
 
     <EditText
-        android:id="@+id/etxtSala"
+        android:id="@+id/etxtBebida"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Sala" />
+        android:hint="Bebida" />
 
     <EditText
-        android:id="@+id/etxtHorario"
+        android:id="@+id/etxtObservacao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Horário (ex: 19:00)"
-        android:inputType="time" />
+        android:hint="Observação" />
 
     <Button
-        android:id="@+id/btn_Reservar"
+        android:id="@+id/btn_Pedir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Reservar" />
+        android:text="Fazer pedido" />
 
     <TextView
         android:id="@+id/txtResultado"
